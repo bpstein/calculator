@@ -4,7 +4,7 @@ def say(message)
 end
 
 
-# Check user input is a valid number
+# Check user's numerical input is a valid number
 def check_num(i)
 	i.to_i.to_s == i || i.to_f.to_s == i
 end
@@ -18,13 +18,37 @@ def user_input
 end
 
 
-# Request input from user
+# Request first numerical input from user
 say "Enter your first number."
 n1 = user_input
 
+
+# Request an mathematical operation from user
 say "Would you like to add, subtract, multiply or divide?"
 operator = gets.chomp
+operator_check = false
 
+
+# Check that user's requested operator is a valid operator 
+while operator_check == false 
+	if operator == 'add'
+	break
+	elsif operator == 'subtract'
+	break
+	elsif operator == 'multiply'
+	break
+	elsif operator == 'divide'
+	break
+	# Notify user that the requested operator is invalid
+	else
+		puts "Sorry, that is not a valid option for this program. Please choose add, subtract, multiply or divide." 
+		operator = gets.chomp
+		operator_check == false
+	end
+end
+
+
+# Request second numerical input from user
 say "Enter your second number."
 n2 = user_input
 
@@ -50,23 +74,3 @@ end
 
 # Output result
 puts n1 + " " + operator + " " + n2 + " " + "= " "#{result}"
-
-
-
-
-
-
-
-# Check operator is a valid operator
-# def check_op(operator)
-# 	operator == add || subtract || multiply || divide 
-# end
-
-# Get a valid operator from user
-# def operator_check
-# 	begin
-# 		input = gets.chomp
-# 		puts "That is not a valid function for this program. Please choose add, subtract, multiply or divide." 
-# 	end
-# end
-
