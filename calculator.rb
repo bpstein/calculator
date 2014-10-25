@@ -2,6 +2,8 @@
 # 2. extract repetitive logic to methods
 # 3. keep track of variable types (class)
 
+require 'pry'
+
 def say(msg)
 	puts "=> #{msg}"
 end
