@@ -59,8 +59,18 @@ case operator
     result = n1.to_f * n2.to_f
     operator = "multiplied by"
   when 'divide'
-    result = n1.to_f / n2.to_f
-    operator = "divided by"
+    while
+      if n2 == '0'
+        say "You cannot divide by 0. Try another divisor."
+        say "Enter your second number."
+        n2 = user_input
+        result = n1.to_f / n2.to_f
+        operator = "divided by"
+      else
+        result = n1.to_f / n2.to_f
+        operator = "divided by"
+      end
+    end
   end
 
 # Output result
